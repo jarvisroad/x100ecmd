@@ -95,7 +95,7 @@ x100ecmd write 10 -f 433.00 -m FM -n "430 main" -s "20k" -r
 | Flag | Default | Description |
 | ----------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `-f`, `--freq` | ​​| Frequency (e.g. 433.0) |
-| `-m`, `--mode` | | Mode: FM, NFM, AM, NAM, T98, T102_B54, DMR, T61_typ1, T61_typ2, T61_typ3, T61_typ4, dPMR, DSTAR, C4FM, AIS, ACARS, POCSAG, 12KIF_W, 12KIF_N<br />※Unsupported modes are not displayed? |
+| `-m`, `--mode` | | Mode: FM, NFM, AM, NAM, DCR, DMR, NXDN, dPMR, DSTAR, C4FM, AIS, ACARS, POCSAG, 12KIF_W, 12KIF_N, T102_B54, T61_typ1, T61_typ2, T61_typ3, T61_typ4<br />※Japanese modes T102/T61_typ..4 can be programmed, no idea if they work... |
 | `-s`, `--step` | | Frequency step: 1k, 3k125, 5k, 6k25, 8k33, 10k, 12k5, 15k, 20k, 25k, 30k, 50k, 100k, 125k, 200k |
 | `-n`, `--name` | | Name (UTF-8) Max: 30 chars, NONE for blank |
 | `--offset` | | Offset: ON, OFF |
