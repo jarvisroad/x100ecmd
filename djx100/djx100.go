@@ -1,4 +1,5 @@
 /*
+Copyright © 2025 <stvhllw@gmail.com>
 Copyright © 2023 Ryu Tanabe <bellx2@gmali.com>
 */
 
