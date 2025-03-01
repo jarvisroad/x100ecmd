@@ -12,8 +12,8 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "x100cmd",
-	Short: "Unofficial Utility for ALINCO DJ-X100",
+	Use:   "x100ecmd",
+	Short: "Unofficial Utility for ALINCO DJ-X100E",
 }
 
 func Execute() {
