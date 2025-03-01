@@ -11,7 +11,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/bellx2/x100cmd/djx100"
+	"github.com/jarvisroad/x100ecmd/djx100"
 	"github.com/spf13/cobra"
 )
 
