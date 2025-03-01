@@ -68,7 +68,7 @@ func(d *ChData) SetName(name string){
 	d.Name = n
 }
 
-var ChMode = []string{"FM", "NFM", "AM", "NAM", "T98", "T102_B54", "DMR", "T61_typ1", "T61_typ2","T61_typ3","T61_typ4","T61_typx", "ICDU", "dPMR","DSTAR","C4FM","AIS","ACARS","POCSAG","12KIF_W","12KIF_N" }
+var ChMode = []string{"FM", "NFM", "AM", "NAM", "DCR", "T102_B54", "DMR", "NXDN", "T61_typ1", "T61_typ2", "T61_typ3", "T61_typ4", "T61_typx", "ICDU", "dPMR", "DSTAR", "C4FM", "AIS", "ACARS", "POCSAG", "12KIF_W", "12KIF_N" }
 
 func ChMode2Num(mode string) (int){
 	for i, v := range ChMode {
@@ -79,7 +79,7 @@ func ChMode2Num(mode string) (int){
 	return -1
 }
 
-var ChStep = []string{"1k","5k","6k25","8k33","10k","12k5","15k","20k","25k","30k","50k","100k","125k","200k"}
+var ChStep = []string{"1k","3k125","5k","6k25","8k33","10k","12k5","15k","20k","25k","30k","50k","100k","125k","200k"}
 
 func ChStep2Num(step string) (int){
 	for i, v := range ChStep {
@@ -182,7 +182,7 @@ func GetPortName(portName string) (string, error) {
 			return port.Name, nil
 		}
 	}
-	return "", errors.New("DJ-X100 not found")
+	return "", errors.New("DJ-X100E not found")
 }
 
 // シリアルポート接続
@@ -198,7 +198,7 @@ func Connect(portName string) (serial.Port, error){
 	if err != nil {
 		return nil, err
 	}
-	response, err := SendCmd(port, "AL~DJ-X100")
+	response, err := SendCmd(port, "AL~DJ-X100E")
 	if (err != nil || response != "OK"){
 		return nil, errors.New("DJ-X100 is not conntected")
 	}
