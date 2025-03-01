@@ -16,7 +16,7 @@ import (
 // checkCmd represents the check command
 var checkCmd = &cobra.Command{
 	Use:   "check",
-	Short: "Check Serial Port And DX-J100 Connection",
+	Short: "Check Serial Port And DJ-X100E Connection",
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("** scan ports **")
 		err := djx100.ListPorts()
