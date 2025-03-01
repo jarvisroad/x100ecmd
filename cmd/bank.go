@@ -1,6 +1,8 @@
 /*
-Copyright © 2023 NAME HERE <EMAIL ADDRESS>
+Copyright © 2025 <stvhllw@gmail.com>
+Copyright © 2023 Ryu Tanabe <bellx2@gmali.com>
 */
+
 package cmd
 
 import (
