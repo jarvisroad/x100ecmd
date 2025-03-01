@@ -1,7 +1,3 @@
-/*
-Copyright © 2025 <stvhllw@gmail.com>
-Copyright © 2023 Ryu Tanabe <bellx2@gmali.com>
-*/
 module github.com/jarvisroad/x100ecmd
 
 go 1.20
