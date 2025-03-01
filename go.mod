@@ -1,4 +1,4 @@
-module github.com/bellx2/x100cmd
+module github.com/jarvisroad/x100ecmd
 
 go 1.20
 
