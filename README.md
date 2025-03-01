@@ -2,9 +2,10 @@
 <a href="./README_en.md">English</a>
 </p> -->
 
-# ALINCO DJ-X100E CommandLine Tool
+# ALINCO DJ-X100E Command Line Tool
 
 - Unofficial command line tool for Alinco [DJ-X100E](https://alinco.com/Products/ham/ht/DJ-X100TE/)
+- Adapted for the DJX100E from the repo (https://github.com/bellx2/x100cmd) by Ryu Tanabe
 
 ## :beginner: How to use
 
