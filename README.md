@@ -20,7 +20,7 @@ x100ecmd read 10
 
 Use the `write` command to write data to the specified channel.
 
-The data will not be reflected until the system is restarted. If you add the `-r` option, the system will be restarted after writing.
+The data will not be reflected until the radio is restarted. If you add the `-r` option, the radio will be restarted after writing.
 
 ```sh
 x100ecmd write 10 -f 433.225 -m NFM -n "GB3IW Repeater" -s "12k5" -r
@@ -73,7 +73,7 @@ DJ-X100E
 ver 3.90-008
 ```
 
-### `x100ecmd read <channel_no>`<br/>`x100cmd ch read <channel_no>`
+### `x100ecmd read <channel_no>`<br/>`x100ecmd ch read <channel_no>`
 
 Read channel data.
 
@@ -113,7 +113,7 @@ x100ecmd write 11 -f 446.00625 -m NFM -n "PMR446 Channel 1" -s "12k5" -r
 
 ### `x100ecmd clear <channel_no>`<br/>`x100ecmd ch clear <channel_no>`
 
-Erase specified channel.
+Erase the specified channel.
 
 ```sh
 x100ecmd clear 10
@@ -143,6 +143,49 @@ x100ecmd export djx-100e.csv
 
 ```:csv
 Channel,Freq,Mode,Step,Name,offset,shift_freq,att,sq,tone,dcs,bank,lat,lon,skip
+001,433.000000,FM,12k5,430 main,OFF,0.000000,OFF,OFF,670,017,A,0.000000,0.000000,OFF
+002,145.000000,FM,12k5,144 main,OFF,0.000000,OFF,OFF,670,017,Z,0.000000,0.000000,OFF
+....
+```
+
+### `x100ecmd import <csv_filename>`<br/>`x100ecmd ch import <csv_filename>`
+
+Imports channel data. The format is comma-separated CSV (UTF-8 with BOM).
+Use the exported data as a reference.
+
+- Data other than that specified will be retained.
+- Channel data will be deleted if the frequency is 0.
+- Position information will be deleted if both Lat and Lon are 0.0.
+- If the header line is different, import may not be possible
+- The file character code must be UTF-8
+
+```sh
+x100ecmd import djx-100e.csv
+```
+
+#### File format
+
+- Minimal format
+
+```:csv
+Channel,Freq,Mode,Step,Name
+001,433.000000,FM,10k,430 Main
+002,145.000000,FM,10k,144 Main
+....
+```
+
+- Without location information
+
+```:csv
+Channel,Freq,Mode,Step,Name,offset,shift_freq,att,sq,tone,dcs,bank
+001,433.000000,FM,10k,430 main,OFF,0.000000,OFF,OFF,670,017,A
+002,145.000000,FM,10k,144 main,OFF,0.000000,OFF,OFF,670,017,Z
+```
+
+- With location information (export of current version data)
+
+```:csv
+Channel,Freq,Mode,Step,Name,offset,shift_freq,att,sq,tone,dcs,bank,lat,lon,skip
 001,433.000000,FM,10k,430 main,OFF,0.000000,OFF,OFF,670,017,A,0.000000,0.000000,OFF
 002,145.000000,FM,10k,144 main,OFF,0.000000,OFF,OFF,670,017,Z,0.000000,0.000000,OFF
 ....
@@ -159,7 +202,7 @@ Channel,Freq,Mode,Step,Name,offset,shift_freq,att,sq,tone,dcs,bank,lat,lon,skip
 Sends a control command.
 
 ```sh
-x100ecmd exec restart # Restart
+x100ecmd exec restart
 ```
 
 | Command | Description |
@@ -167,7 +210,7 @@ x100ecmd exec restart # Restart
 | version | Get version information |
 | restart | Restart |
 | read \<address> | Read memory |
-| write \<address> <data> | Write memory 265Byte |
+| write \<address> <data> | Write memory 265Byte <br />※Caution - can write any memory location in the radio! |
 
 ## Restrictions, etc.
 
