@@ -227,7 +227,9 @@ x100ecmd exec restart
 [MIT License](./LICENSE)
 
 ## Acknowledgements
+
 <https://github.com/bellx2/x100cmd>
+
 <https://github.com/musen23872/djx100-commandline-tools>
 
 - メモリーデータ構造の一部は`djx100-unofficial-memory-data.hexpat`を参考にさせていただきました。
