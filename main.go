@@ -1,5 +1,5 @@
 /*
-Copyright © 2023 Bellx2 <bellx2@gmail.com>
+Copyright © 2025 <stvhllw@gmail.com>
 */
 
 package main
