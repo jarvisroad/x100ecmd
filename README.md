@@ -125,7 +125,7 @@ OK
 | `-y`, `--yes` | false | Do not confirm deletion |
 | `-r`, `--restart` | false | Restart after execution |
 
-### `x100ecmd export <csv_filename>`<br/>`x100cmd ch export <csv_filename>`
+### `x100ecmd export <csv_filename>`<br/>`x100ecmd ch export <csv_filename>`
 
 Exports all channel data (1-999).
 The format is comma-separated CSV (UTF-8 with BOM).
